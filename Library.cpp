@@ -9,7 +9,7 @@ public:
         cout << "Press 2 for Exercise 1 Part 3\n";
         cin >> part;
         if (part==1){ //exercise 1 Step 1 and 2
-            cout << "Input a Value :";
+            cout << "Input a Value: ";
             int value;
             cin >> value;
             cout << "Value after plus 3,and the result times 9: ";
