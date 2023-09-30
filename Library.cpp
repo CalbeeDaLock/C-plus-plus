@@ -11,7 +11,6 @@ public:
         if (part==1){ //exercise 1 Step 1 and 2
             cout << "Input a Value :";
             int value;
-            cout << "Input a Value: ";
             cin >> value;
             cout << "Value after plus 3,and the result times 9: ";
             int result = (value+3)*9;
