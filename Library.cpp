@@ -84,12 +84,12 @@ public:
     
     void e4() {
         int part;
+        float x,sum,average,temp;
         cout << "Press 1 for Exercise 4 Part 1(For loop)\n";
         cout << "Press 2 for Exercise 4 Part 2(While loop)\n";
         cout << "Press 3 for Exercise 4 Part 3(do-While loop)\n";
         cin >> part;
         if(part == 1){
-            float x,sum,average,temp;
             cout << "Enter 10 number below,\n";
             sum = 0;
             for(x=1; x<=10; x++){
@@ -103,7 +103,6 @@ public:
             average = sum/10;
             cout << "The average of 10 input number is:" << average << endl;
         }if(part == 2){
-            float x,sum,average,temp;
             cout << "Enter 10 number below,\n";
             sum = 0;
             x = 1;
@@ -119,7 +118,6 @@ public:
             average = sum/10;
             cout << "The average of 10 input number is:" << average << endl;
         }if(part == 3){
-            float x,sum,average,temp;
             cout << "Enter 10 number below,\n";
             sum = 0;
             x = 1;
@@ -139,6 +137,38 @@ public:
             e4();
         }
     }
+    
+    void e5() {
+        float x,sum;
+        int part;
+        cout << "Press 1 for Exercise 5 Part 1\n";
+        cout << "Press 2 for Exercise 5 Part 2\n";
+        cin >> part;
+        if(part == 1){
+            while(true){
+                cout << "Enter a number: ";
+                cin >> x;
+                if(x<0){
+                    cout << "The sum of all positive numbers entered is " << sum << endl;
+                    break;
+                }
+                sum += x;
+            }
+        }if(part == 2){
+            for(int num=0;num<10;num++){
+               cout << "Enter a number: ";
+               cin >> x;
+               if(x<0){
+                    num -=1;
+                    continue;
+               }
+               sum += x;
+            }
+        }if (part != 1 && part != 2){
+            cout << "Invalid choice! Please try again." << endl;
+            e5();
+        }
+    }
 };
 
 int main() {
@@ -146,7 +176,7 @@ int main() {
     int choice;
 
     while (true) {
-        cout << "Press 1 for Exercise 1\nPress 2 for Exercise 2\nPress 3 for Exercise 3\nPress 4 for Exercise 4\n";
+        cout << "Press 1 for Exercise 1\nPress 2 for Exercise 2\nPress 3 for Exercise 3\nPress 4 for Exercise 4\nPress 5 for Exercise 5\n";
         cin >> choice; //choose what Exercise
 
         switch (choice) {
@@ -162,6 +192,9 @@ int main() {
             case 4:
                 lib.e4();
                 break;
+            case 5:
+                lib.e5();
+                break;    
             default:
                 cout << "Invalid choice! Please try again." << std::endl;
                 break;
