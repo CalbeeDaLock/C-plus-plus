@@ -52,18 +52,92 @@ public:
             cout << "Your overall result is ";
             cout << oa << " ";
             if (cm >= 50 && em >= 50){     
-                cout << "(Pass)";
+                cout << "(Pass)"<< endl;
             }else{ 
-                cout << "(Fail)";
-            }if (part != 1 && 2){
-            std::cout << "Invalid choice! Please try again." << std::endl;
+                cout << "(Fail)"<< endl;
+            }if (part != 1 && part != 2){
+            std::cout << "Invalid choice! Please try again." << endl;
             e2();
             }          
         }
     }
 
     void e3() {
-        cout << "Will be Release in Future\n";
+        int x1; //first integer
+        int x2; //second integer
+        cout << "Enter the first integer:";
+        cin >> x1;
+        cout << "Enter the second integer:";
+        cin >> x2;
+        if (x1 == x2){
+            cout << "The first integer is the same as the second integer!" << endl;
+        }else{
+            if (x1 < x2){
+                cout << "The first integer is less than the second integer!" << endl;
+            }else{
+                cout << "The first integer is greater than the second integer!" << endl;
+            }
+        }
+            
+        
+    }
+    
+    void e4() {
+        int part;
+        cout << "Press 1 for Exercise 4 Part 1(For loop)\n";
+        cout << "Press 2 for Exercise 4 Part 2(While loop)\n";
+        cout << "Press 3 for Exercise 4 Part 3(do-While loop)\n";
+        cin >> part;
+        if(part == 1){
+            float x,sum,average,temp;
+            cout << "Enter 10 number below,\n";
+            sum = 0;
+            for(x=1; x<=10; x++){
+                cout << "Number_" << x << ":";
+                cin >> temp;
+                //cout << temp; For testing
+                sum += temp ;
+                //cout << sum; For testing
+            }
+            cout << "The sum of 10 input number is:" << sum << endl;
+            average = sum/10;
+            cout << "The average of 10 input number is:" << average << endl;
+        }if(part == 2){
+            float x,sum,average,temp;
+            cout << "Enter 10 number below,\n";
+            sum = 0;
+            x = 1;
+            while(x<=10){
+                cout << "Number_" << x << ":";
+                x++;
+                cin >> temp;
+                //cout << temp; For testing
+                sum += temp;
+                //cout << sum; For testing
+            }
+            cout << "The sum of 10 input number is:" << sum << endl;
+            average = sum/10;
+            cout << "The average of 10 input number is:" << average << endl;
+        }if(part == 3){
+            float x,sum,average,temp;
+            cout << "Enter 10 number below,\n";
+            sum = 0;
+            x = 1;
+            do{
+               cout << "Number_" << x << ":";
+                x++;
+                cin >> temp;
+                //cout << temp; For testing
+                sum += temp;
+                //cout << sum; For testing
+            }while(x<=10);
+            cout << "The sum of 10 input number is:" << sum << endl;
+            average = sum/10;
+            cout << "The average of 10 input number is:" << average << endl;
+        }if (part != 1 && part != 2 && part != 3){
+            cout << "Invalid choice! Please try again." << endl;
+            e4();
+        }
     }
 };
 
@@ -72,8 +146,8 @@ int main() {
     int choice;
 
     while (true) {
-        std::cout << "Press 1 for Exercise 1\nPress 2 for Exercise 2\nPress 3 for Exercise 3\n";
-        std::cin >> choice; //choose what Exercise
+        cout << "Press 1 for Exercise 1\nPress 2 for Exercise 2\nPress 3 for Exercise 3\nPress 4 for Exercise 4\n";
+        cin >> choice; //choose what Exercise
 
         switch (choice) {
             case 1:
@@ -85,8 +159,11 @@ int main() {
             case 3:
                 lib.e3();
                 break;
+            case 4:
+                lib.e4();
+                break;
             default:
-                std::cout << "Invalid choice! Please try again." << std::endl;
+                cout << "Invalid choice! Please try again." << std::endl;
                 break;
         }
     }
