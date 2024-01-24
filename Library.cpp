@@ -22,7 +22,7 @@ public:
             float fahrenheit = (celcius * 9 / 5 + 32);
             cout << "Fahrenheit: " << fahrenheit << endl;
         }else if (part != 1 && 2){
-            std::cout << "Invalid choice! Please try again." << std::endl;
+            cout << "Invalid choice! Please try again." << endl;
             e1();
         }
     }
